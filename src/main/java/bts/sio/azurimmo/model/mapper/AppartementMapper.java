@@ -12,6 +12,9 @@ public class AppartementMapper {
         dto.setNumero(a.getNumero());
         dto.setDescription(a.getDescription());
         dto.setSurface(a.getSurface());
+        if (a.getBatiment() != null) {
+            dto.setBatiment_id(a.getBatiment().getId());
+        }
         return dto;
     }
 

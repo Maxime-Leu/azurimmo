@@ -9,5 +9,6 @@ public class AppartementDTO {
 	 private Integer numero;
 	 private String description;
 	 private Float surface;
-
+	 
+	 private Long batiment_id;
 }
