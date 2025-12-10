@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import bts.sio.azurimmo.model.Batiment;
 import bts.sio.azurimmo.model.dto.BatimentDTO;
 import bts.sio.azurimmo.model.mapper.BatimentMapper;
 import bts.sio.azurimmo.repository.BatimentRepository;
@@ -28,5 +29,11 @@ public class BatimentService {
                                  .stream()
                                  .map(BatimentMapper::toDTO)
                                  .collect(Collectors.toList());
-}
+    }
+    
+    public BatimentDTO saveBatimentDTO(BatimentDTO dto) {
+        Batiment entity = BatimentMapper.toEntity(dto);
+        Batiment saved = batimentRepository.save(entity);
+        return BatimentMapper.toDTO(saved);
+    }
 }
