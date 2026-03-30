@@ -49,4 +49,11 @@ public class AppartementService {
 		 Appartement saved = appartementRepository.save(entity);
 		 return AppartementMapper.toDTO(saved);
 	 }
+	// Ajoute ceci dans ton AppartementService
+	public List<AppartementDTO> getAppartementsDTO() {
+		return ((List<Appartement>) appartementRepository.findAll())
+				.stream()
+				.map(AppartementMapper::toDTO)
+				.collect(Collectors.toList());
+	}
 }
