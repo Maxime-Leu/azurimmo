@@ -1,0 +1,218 @@
+/* --- STRUCTURE GLOBALE --- */
+.lux-page {
+    padding: 60px 8%;
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    color: white;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.lux-header-v2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.lux-header-v2 h1 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+    margin-top: 10px;
+    font-weight: 800;
+}
+
+.lux-header-v2 .subtitle {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* --- NOUVELLE BARRE DE FILTRES (MODERN CHIPS) --- */
+.filter-container-modern {
+    max-width: 1000px;
+    margin: 0 auto 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Barre de recherche style Apple */
+.search-wrapper {
+    width: 100%;
+}
+
+.modern-search {
+    width: 100%;
+    background: #161616;
+    border: 1px solid #252525;
+    padding: 22px 35px;
+    border-radius: 100px; /* Style pilule */
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.modern-search:focus {
+    border-color: var(--gold);
+    background: #1a1a1a;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
+}
+
+/* Lignes de filtres */
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.row-label {
+    min-width: 100px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #444; /* Gris foncé pour le côté discret */
+    font-weight: 800;
+}
+
+.chips-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Style des boutons pastilles (Chips) */
+.chip {
+    background: #111;
+    border: 1px solid #222;
+    color: #999;
+    padding: 10px 24px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chip:hover {
+    border-color: #555;
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* État actif de la pastille (Doré) */
+.chip.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #000; /* Texte noir sur fond doré pour lisibilité */
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2);
+}
+
+/* --- GRILLE DE CARTES --- */
+.appart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 40px;
+}
+
+.appart-card {
+    background: #151515;
+    border-radius: 32px; /* Coins encore plus arrondis pour le luxe */
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid #222;
+}
+
+.appart-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(197, 160, 89, 0.4);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.card-image {
+    height: 200px;
+    background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+}
+
+.tag-pieces {
+    background: var(--gold);
+    color: black;
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.unit-ref {
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.unit-surface {
+    color: #555;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.appart-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-location {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* Bouton Détail version Premium */
+.btn-detail {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #333;
+    color: white;
+    padding: 15px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.appart-card:hover .btn-detail {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+/* État "Aucun résultat" */
+.no-result {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 100px 0;
+    color: #444;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
